@@ -7,8 +7,11 @@ import {
 } from '@/features/signup/schemas/signup.schema';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useCheckConnection } from '@/shared/service/auth/auth.query';
 
 export default function SignUpPage() {
+  const { data, isLoading, error } = useCheckConnection();
+
   const form = useForm<SignUpFormValues>({
     resolver: zodResolver(SignUpSchema),
     mode: 'onChange',
@@ -21,6 +24,9 @@ export default function SignUpPage() {
   });
   return (
     <div className="">
+      <div>
+        {JSON.stringify(data)}
+      </div>
       <SignUpForm form={form} onSubmit={() => {}} />
     </div>
   );
