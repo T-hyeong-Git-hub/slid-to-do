@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Test</title>
+</head>
+<body>
+<h1>Account CRUD Test</h1>
+
+<button onclick="createAccount()">Create Account</button>
+<button onclick="fetchAccounts()">Get All Accounts</button>
+
+<pre id="result"></pre>
+
+<script>
+    function createAccount() {
+      fetch('/api/accounts', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            id: 'test',
+          email: 'test@example.com',
+          password: '1234',
+          nickname: 'tester'
+        })
+      })
+      .then(res => res.json())
+      .then(data => document.getElementById('result').innerText = JSON.stringify(data, null, 2));
+    }
+
+    function fetchAccounts() {
+      fetch('/api/accounts')
+      .then(res => res.json())
+      .then(data => document.getElementById('result').innerText = JSON.stringify(data, null, 2));
+    }
+  </script>
+</body>
+</html>
