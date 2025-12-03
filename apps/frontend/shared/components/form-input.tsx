@@ -16,7 +16,7 @@ interface FormInputProps<T extends FieldValues> {
 }
 
 const defaultInputClass =
-  "h-10 border-none bg-[#f9faf8] focus-visible:ring-green-300 focus-visible:outline-none md:h-12";
+  "h-10 border-none bg-[#f9faf8] focus-visible:ring-blue-300 focus-visible:outline-none md:h-12";
 
 export function FormInput<T extends FieldValues>({
   control,
@@ -51,7 +51,7 @@ export function FormInput<T extends FieldValues>({
               )}
             />
           </FormControl>
-          <FormMessage />
+          <FormMessage className="text-red-400"/>
         </FormItem>
       )}
     />

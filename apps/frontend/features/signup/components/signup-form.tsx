@@ -22,9 +22,8 @@ export default function SignUpForm({ form, onSubmit }: SignUpFormProps) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full rounded-[40px] bg-white px-14 py-11 shadow-md"
+        className="w-full  max-w-[640px] px-4 md:px-13"
       >
-        <h1 className="mb-13 text-center text-2xl font-semibold">회원가입</h1>
 
         <FormInput
           control={form.control}
@@ -33,7 +32,7 @@ export default function SignUpForm({ form, onSubmit }: SignUpFormProps) {
           type="text"
           placeholder="이름을 입력하세요"
           className="mb-6 gap-1"
-          inputClassName="h-10 border-none bg-[#f9faf8] focus-visible:ring-green-300 focus-visible:outline-none md:h-12"
+          inputClassName="h-10 border-none bg-[#f9faf8] focus-visible:ring-blue-300 focus-visible:outline-none md:h-12"
         />
 
         {/* 이메일 */}
@@ -65,7 +64,7 @@ export default function SignUpForm({ form, onSubmit }: SignUpFormProps) {
           as={InputPassword}
         />
         {confirmPassword && password === confirmPassword && (
-          <p className="mt-1 text-sm text-green-600">비밀번호가 일치합니다</p>
+          <p className="mt-1 text-sm text-blue-500">비밀번호가 일치합니다</p>
         )}
 
         <Button
@@ -73,17 +72,17 @@ export default function SignUpForm({ form, onSubmit }: SignUpFormProps) {
           disabled={!form.formState.isValid}
           className={`mt-10 mb-4 h-12 w-full rounded-xl text-lg font-semibold md:h-14 ${
             form.formState.isValid
-              ? "bg-green-500 text-white hover:bg-green-600"
-              : "bg-gray-100 text-gray-400"
+              ? "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-[#94A3B8] text-white"
           }`}
         >
-          회원가입
+          회원가입하기
         </Button>
         <p className="text-center text-sm font-medium">
           이미 회원이신가요?
           <Link
             href={"/login"}
-            className="ml-1 font-semibold text-green-600 underline"
+            className="ml-1 font-semibold text-blue-400 underline"
           >
             로그인
           </Link>
