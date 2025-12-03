@@ -11,7 +11,7 @@ export function InputEmail({ ...props }) {
         {...props}
         type="email"
         placeholder="이메일을 입력하세요"
-        className="h-10 border-none bg-[#f9faf8] focus-visible:ring-green-300 focus-visible:outline-none md:h-12"
+        className="h-10 border-none bg-[#f9faf8] focus-visible:ring-blue-300 focus-visible:outline-none md:h-12"
       />
     </div>
   );
@@ -176,7 +176,7 @@ export function InputPassword({ ...props }) {
         {...props}
         type={showPassword ? 'text' : 'password'}
         placeholder="비밀번호를 입력하세요"
-        className="h-10 border-none bg-[#f9faf8] pr-10 focus-visible:ring-green-300 focus-visible:outline-none md:h-12"
+        className="h-10 border-none bg-[#f9faf8] focus-visible:ring-blue-300 focus-visible:outline-none md:h-12"
         onChange={handleChange}
         autoCapitalize="none"
         autoCorrect="off"
