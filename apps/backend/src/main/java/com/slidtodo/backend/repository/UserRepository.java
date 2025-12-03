@@ -20,5 +20,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // SELECT * FROM users WHERE email = ?
     Optional<User> findByEmail(String email);
 
+    boolean existsByEmail(String email); //회원 가입 이메일 중복체크
+
+
 
 }
