@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
+      <body className='bg-[#F1F5F9] min-h-screen min-w-screen'>
         <Providers>{children}</Providers>
       </body>
     </html>
